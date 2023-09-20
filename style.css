@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ece9fd;
+  margin: 6rem 2.3rem 6.6rem;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 1.6rem; /* 02 - Com a medida REM agora tudo fica flexivel e partindo de 16px*/
+}
+
+:root {
+  /* 01 - Setando o tamanho de font padrão para 10px 
+    para facilitar os calculos com rem */
+  font-size: 62.5%; /* 16px * 0.625 = 10px */
+}
+
+main {
+  margin: 0 auto;
+  max-width: 33rem;
+}
+
+/* Primeiro p dentro do main */
+main p:first-child {
+  color: #7158ef;
+  letter-spacing: 3px; /* Quando a diferença for muito pequena é preferível manter em pixels */
+  text-transform: uppercase;
+  line-height: 3.2rem;
+
+  margin-bottom: 1.7rem;
+}
+
+h1 {
+  /* Utilizando a unidade de medida flexivel REM;
+    REM = Root EM;
+    Sempre referenciando ao valor raiz/padrão do navegador 
+    1rem = unidade de medida padrão do navegador (16px)*/
+  font-size: 4rem; /* 16px * 2,5 = 40px */
+  font-weight: 800;
+  line-height: 4.8rem;
+
+  color: #090039;
+  margin-bottom: 1.5rem;
+}
+
+/* lê se primeiro 'p' logo após 'h1' (contidos no mesmo pai) */
+h1 + p {
+  color: rgba(10, 0, 57, 0.64);
+  line-height: 3.2rem;
+  margin-bottom: 3.2rem;
+}
+
+a {
+  color: #090039;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #7158ef;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  margin-top: 7.2rem;
+}
+
+ul li {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+
+  color: #090039;
+
+  max-width: 25.7rem;
+
+  display: flex;
+  gap: 3.8rem;
+}
+
+/* Pega todo li que tenha anterior a ele um li */
+ul li + li {
+  margin-top: 3.2rem;
+}
+
+ul li span {
+  font-weight: 800;
+  font-size: 7.2rem;
+  line-height: 8rem;
+
+  letter-spacing: -2px;
+
+  color: #090039;
+}
+
+/* 
+  Media queries (pode ser usado quando tempos a tag meta viewport),
+  serve para funcionar em diferentes dispositivos fazendo o layout não quebrar. 
+*/
+/* 
+  É sempre bom ter o dispositivo em questão (iPhone, etc) para testar pois, 
+  não sabemos todas as propriedades que funcionam em todos os navegadores. 
+*/
+@media (min-width: 720px) {
+  body {
+    background: black;
+    padding: 8rem;
+  }
+
+  h1 {
+    color: rgba(245, 245, 220, 0.884);
+  }
+  h1 + p {
+    color: rgba(210, 198, 198, 0.837) !important;
+  }
+
+  a {
+    color: violet;
+  }
+
+  span,
+  li {
+    color: rgb(187, 183, 134) !important;
+  }
+
+  main {
+    display: flex;
+    gap: 10rem;
+
+    max-width: 1020px;
+  }
+
+  main > div {
+    max-width: 484px;
+  }
+
+  ul li {
+    gap: 5.2rem;
+    align-items: center;
+    max-width: 480px;
+  }
+}
